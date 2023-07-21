@@ -335,7 +335,7 @@ VivaldiTester::VivaldiTester() {
     remapCfgs->FlipSearchAndAssistantOnPixelbook = TRUE;
     remapCfgs->HasAssistantKey = RemapCfgOverrideAutoDetect;
     remapCfgs->IsNonChromeEC = RemapCfgOverrideAutoDetect;
-    remapCfgs->remappings = 40;
+    remapCfgs->remappings = 31;
 
     // Disable brightness down while holding search
     remapCfgs->cfg[0].Search = RemapCfgKeyStateEnforce;
@@ -425,10 +425,134 @@ VivaldiTester::VivaldiTester() {
     remapCfgs->cfg[13].remappedKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
     remapCfgs->cfg[13].remappedKey.Flags = KEY_E0;
 
+    // Search + Back -> F1
+    remapCfgs->cfg[14].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[14].originalKey.MakeCode = VIVALDI_BACK;
+    remapCfgs->cfg[14].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[14].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Refresh -> F2
+    remapCfgs->cfg[15].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[15].originalKey.MakeCode = VIVALDI_REFRESH;
+    remapCfgs->cfg[15].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[15].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Fullscreen -> F3
+    remapCfgs->cfg[16].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[16].originalKey.MakeCode = VIVALDI_FULLSCREEN;
+    remapCfgs->cfg[16].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[16].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Show Windows -> F4
+    remapCfgs->cfg[17].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[17].originalKey.MakeCode = VIVALDI_OVERVIEW;
+    remapCfgs->cfg[17].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[17].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Screenshot -> F5
+    remapCfgs->cfg[18].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[18].originalKey.MakeCode = VIVALDI_SNAPSHOT;
+    remapCfgs->cfg[18].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[18].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Play/Pause -> F10
+    remapCfgs->cfg[19].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[19].originalKey.MakeCode = VIVALDI_PLAYPAUSE;
+    remapCfgs->cfg[19].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[19].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Mute -> F11
+    remapCfgs->cfg[20].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[20].originalKey.MakeCode = VIVALDI_MUTE;
+    remapCfgs->cfg[20].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[20].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Decrease Volume -> F12
+    remapCfgs->cfg[21].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[21].originalKey.MakeCode = VIVALDI_VOLDN;
+    remapCfgs->cfg[21].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[21].remapVivaldiToFnKeys = TRUE;
+
+    // Search + Increase Volume -> F13
+    remapCfgs->cfg[22].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[22].originalKey.MakeCode = VIVALDI_VOLUP;
+    remapCfgs->cfg[22].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[22].remapVivaldiToFnKeys = TRUE;
+
+    //Map Overview -> Windows + Tab
+    remapCfgs->cfg[23].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[23].LeftShift = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[23].Search = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[23].originalKey.MakeCode = VIVALDI_OVERVIEW;
+    remapCfgs->cfg[23].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[23].remappedKey.MakeCode = 0x0F;
+    remapCfgs->cfg[23].additionalKeys[0].MakeCode = K_LWIN;
+    remapCfgs->cfg[23].additionalKeys[0].Flags = KEY_E0;
+
+    remapCfgs->cfg[24].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[24].LeftShift = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[24].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[24].originalKey.MakeCode = VIVALDI_OVERVIEW;
+    remapCfgs->cfg[24].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[24].remappedKey.MakeCode = 0x0F;
+
+    // Map Snapshot -> Windows + Shift + S
+    remapCfgs->cfg[25].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[25].LeftShift = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[25].Search = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[25].originalKey.MakeCode = VIVALDI_SNAPSHOT;
+    remapCfgs->cfg[25].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[25].remappedKey.MakeCode = 0x1F;
+    remapCfgs->cfg[25].additionalKeys[0].MakeCode = K_LWIN;
+    remapCfgs->cfg[25].additionalKeys[0].Flags = KEY_E0;
+    remapCfgs->cfg[25].additionalKeys[1].MakeCode = K_LSHFT;
+
+    remapCfgs->cfg[26].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[26].LeftShift = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[26].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[26].originalKey.MakeCode = VIVALDI_SNAPSHOT;
+    remapCfgs->cfg[26].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[26].remappedKey.MakeCode = 0x1F;
+    remapCfgs->cfg[26].additionalKeys[0].MakeCode = K_LSHFT;
+
+    // Lock -> Delete
+    remapCfgs->cfg[27].Search = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[27].originalKey.MakeCode = K_LOCK;
+    remapCfgs->cfg[27].originalKey.Flags = 0;
+    remapCfgs->cfg[27].remappedKey.MakeCode = K_DELETE;
+
+    // Fullscreen -> F11
+    remapCfgs->cfg[28].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[28].LeftShift = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[28].originalKey.MakeCode = VIVALDI_FULLSCREEN;
+    remapCfgs->cfg[28].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[28].remappedKey.MakeCode = fnKeys_set1[10];
+
+    // LeftAlt + Backspace -> Delete
+    remapCfgs->cfg[29].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[29].LeftAlt = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[29].RightAlt = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[29].originalKey.MakeCode = K_BACKSP;
+    remapCfgs->cfg[29].originalKey.Flags = 0;
+    remapCfgs->cfg[29].remappedKey.MakeCode = K_DELETE;
+    remapCfgs->cfg[29].remappedKey.Flags = KEY_E0;
+    remapCfgs->cfg[29].additionalKeys[0].MakeCode = K_LALT;
+    remapCfgs->cfg[29].additionalKeys[0].Flags = KEY_BREAK;
+
+    // RightAlt + Backspace -> Delete
+    remapCfgs->cfg[30].LeftCtrl = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[30].LeftAlt = RemapCfgKeyStateEnforceNot;
+    remapCfgs->cfg[30].RightAlt = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[30].originalKey.MakeCode = K_BACKSP;
+    remapCfgs->cfg[30].originalKey.Flags = 0;
+    remapCfgs->cfg[30].remappedKey.MakeCode = K_DELETE;
+    remapCfgs->cfg[30].remappedKey.Flags = KEY_E0;
+    remapCfgs->cfg[30].additionalKeys[0].MakeCode = K_RALT;
+    remapCfgs->cfg[30].additionalKeys[0].Flags = KEY_BREAK;
+
     filterExt->remapCfgs = remapCfgs;
 
     DbgPrint("Initialized\n");
-
     FILE* dumpedSettingsFile;
     if (fopen_s(&dumpedSettingsFile, "croskbsettings.bin", "wb") == 0) {
         fwrite(remapCfgs, 1, cfgSize, dumpedSettingsFile);

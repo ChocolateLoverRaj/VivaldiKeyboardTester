@@ -337,29 +337,93 @@ VivaldiTester::VivaldiTester() {
     remapCfgs->IsNonChromeEC = RemapCfgOverrideAutoDetect;
     remapCfgs->remappings = 40;
 
+    // Disable brightness down while holding search
+    remapCfgs->cfg[0].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[0].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
+    remapCfgs->cfg[0].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[0].remapVivaldiToFnKeys = TRUE;
+
+    // Disable brightness up while holding search
+    remapCfgs->cfg[1].Search = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[1].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
+    remapCfgs->cfg[1].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[1].remapVivaldiToFnKeys = TRUE;
+
+    // Disable brightness down while holding LeftCtrl
+    remapCfgs->cfg[2].LeftCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[2].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
+    remapCfgs->cfg[2].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[2].remapVivaldiToFnKeys = TRUE;
+
+    // Disable brightness up while holding LeftCtrl
+    remapCfgs->cfg[3].LeftCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[3].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
+    remapCfgs->cfg[3].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[3].remapVivaldiToFnKeys = TRUE;
+
+    // Disable brightness down while holding RightCtrl
+    remapCfgs->cfg[4].RightCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[4].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
+    remapCfgs->cfg[4].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[4].remapVivaldiToFnKeys = TRUE;
+
+    // Disable brightness up while holding RightCtrl
+    remapCfgs->cfg[5].RightCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[5].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
+    remapCfgs->cfg[5].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[5].remapVivaldiToFnKeys = TRUE;
+
+    // Disable keyboard brightness down while holding Search
     remapCfgs->cfg[6].Search = RemapCfgKeyStateEnforce;
-    remapCfgs->cfg[6].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
+    remapCfgs->cfg[6].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_DOWN;
     remapCfgs->cfg[6].originalKey.Flags = KEY_E0;
     remapCfgs->cfg[6].remapVivaldiToFnKeys = TRUE;
 
+    // Disable keyboard brightness up while holding Search
     remapCfgs->cfg[7].Search = RemapCfgKeyStateEnforce;
-    remapCfgs->cfg[7].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
+    remapCfgs->cfg[7].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
     remapCfgs->cfg[7].originalKey.Flags = KEY_E0;
     remapCfgs->cfg[7].remapVivaldiToFnKeys = TRUE;
 
-    remapCfgs->cfg[32].LeftCtrl = RemapCfgKeyStateNoDetect;
-    remapCfgs->cfg[32].LeftAlt = RemapCfgKeyStateEnforce;
-    remapCfgs->cfg[32].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
-    remapCfgs->cfg[32].originalKey.Flags = KEY_E0;
-    remapCfgs->cfg[32].remappedKey.MakeCode = VIVALDI_KBD_BKLIGHT_DOWN;
-    remapCfgs->cfg[32].remappedKey.Flags = KEY_E0;
+    // Disable keyboard brightness down while holding LeftCtrl
+    remapCfgs->cfg[8].LeftCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[8].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_DOWN;
+    remapCfgs->cfg[8].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[8].remapVivaldiToFnKeys = TRUE;
 
-    remapCfgs->cfg[33].LeftCtrl = RemapCfgKeyStateNoDetect;
-    remapCfgs->cfg[33].LeftAlt = RemapCfgKeyStateEnforce;
-    remapCfgs->cfg[33].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
-    remapCfgs->cfg[33].originalKey.Flags = KEY_E0;
-    remapCfgs->cfg[33].remappedKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
-    remapCfgs->cfg[33].remappedKey.Flags = KEY_E0;
+    // Disable keyboard brightness up while holding LeftCtrl
+    remapCfgs->cfg[9].LeftCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[9].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
+    remapCfgs->cfg[9].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[9].remapVivaldiToFnKeys = TRUE;
+
+    // Disable keyboard brightness down while holding RightCtrl
+    remapCfgs->cfg[10].RightCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[10].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_DOWN;
+    remapCfgs->cfg[10].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[10].remapVivaldiToFnKeys = TRUE;
+
+    // Disable keyboard brightness up while holding RightCtrl
+    remapCfgs->cfg[11].RightCtrl = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[11].originalKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
+    remapCfgs->cfg[11].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[11].remapVivaldiToFnKeys = TRUE;
+
+    // Alt + Brightness down -> Keyboard brightness down
+    remapCfgs->cfg[12].LeftCtrl = RemapCfgKeyStateNoDetect;
+    remapCfgs->cfg[12].LeftAlt = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[12].originalKey.MakeCode = VIVALDI_BRIGHTNESSDN;
+    remapCfgs->cfg[12].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[12].remappedKey.MakeCode = VIVALDI_KBD_BKLIGHT_DOWN;
+    remapCfgs->cfg[12].remappedKey.Flags = KEY_E0;
+
+    // Alt + Brightness up -> Keyboard brightness up
+    remapCfgs->cfg[13].LeftCtrl = RemapCfgKeyStateNoDetect;
+    remapCfgs->cfg[13].LeftAlt = RemapCfgKeyStateEnforce;
+    remapCfgs->cfg[13].originalKey.MakeCode = VIVALDI_BRIGHTNESSUP;
+    remapCfgs->cfg[13].originalKey.Flags = KEY_E0;
+    remapCfgs->cfg[13].remappedKey.MakeCode = VIVALDI_KBD_BKLIGHT_UP;
+    remapCfgs->cfg[13].remappedKey.Flags = KEY_E0;
 
     filterExt->remapCfgs = remapCfgs;
 
